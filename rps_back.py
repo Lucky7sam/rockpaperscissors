@@ -49,7 +49,11 @@ def check_times_to_play(num):
     error = "Number is not correct"
 
     # Check that 'num' meets the requirements above.
-
+    if int(num) < 2:
+        rps.quit_game("Your number is too small")
+    if int(num) > 21:
+        rps.quit_game("Your number is too big")
+    return num	
     # If 'num' does not meet requirements call rps.quit_game with an error 
     # message (the variable 'error.')
     # Note: use function int, to convert num to integer when using it to compare to another integer, i.e. int(num)
@@ -110,6 +114,12 @@ def play_match():
     while count < num_times:
         game_winner = play_game(player_name)
         # Now use an if statement to increment total for winner
+        if game_winner == "Player":
+	player_wins += 1
+        if game_winner = "Computer" :
+	computer_wins += 1
+        if game_winner = "Tie":
+        ties += 1
         # i.e. will increment either ties, player_wins, or computer_winds
         count = count + 1
 
